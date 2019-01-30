@@ -36,7 +36,7 @@ function posts(
             });
         case RECEIVE_POSTS:
             return Object.assign({}, state, {
-                isFetching: true,
+                isFetching: false,
                 didInvalidate: false,
                 items: action.posts,
                 lastUpdate: action.receivedAt
