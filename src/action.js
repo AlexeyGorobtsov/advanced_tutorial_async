@@ -20,6 +20,7 @@ function requestPosts(subreddit) {
 }
 
 function receivePosts(subreddit, json) {
+    console.log(json)
     return {
         type: RECEIVE_POSTS,
         subreddit,
@@ -51,6 +52,7 @@ export function fetchPosts(subreddit) {
 }
 
 function shouldFetchPosts(state, subreddit) {
+    // console.log(subreddit)
     const posts = state.postsBySubreddit[subreddit];
     if (!posts) {
         return true

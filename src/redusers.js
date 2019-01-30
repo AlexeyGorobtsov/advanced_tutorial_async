@@ -8,7 +8,9 @@ import {
 } from "./action";
 
 function selectedSubreddit(state = 'reactjs', action) {
+    // console.log(action)
     switch (action.type) {
+        case SELECT_SUBREDDIT:
         case SELECT_SUBREDDIT:
             return action.subreddit;
         default:
@@ -24,6 +26,7 @@ function posts(
     },
     action
 ) {
+    // console.log(action);
     switch (action.type) {
         case INVALIDATE_SUBREDDIT:
             return Object.assign({}, state, {
@@ -39,7 +42,7 @@ function posts(
                 isFetching: false,
                 didInvalidate: false,
                 items: action.posts,
-                lastUpdate: action.receivedAt
+                lastUpdated: action.receivedAt
             });
         default:
             return state

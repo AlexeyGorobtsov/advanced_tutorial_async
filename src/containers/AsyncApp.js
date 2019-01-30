@@ -37,6 +37,7 @@ class AsyncApp extends React.Component {
     }
 
     render() {
+        console.log(this)
         const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props;
         return (
             <div>
