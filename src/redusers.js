@@ -24,9 +24,9 @@ function posts(
         didInvalidate: false,
         items: []
     },
-    action
+    action // function receivePosts => return {type: RECEIVE_POSTS,  subreddit,   posts: array,    receivedAt: Date.now()}
 ) {
-    // console.log(action);
+     console.log(action);
     switch (action.type) {
         case INVALIDATE_SUBREDDIT:
             return Object.assign({}, state, {
@@ -50,6 +50,10 @@ function posts(
 }
 
 function postsBySubreddit(state = {}, action) {
+    // console.log(action.subreddit)
+    // console.log(posts(state[action.subreddit], action));
+    //console.log(state[action.subreddit]);
+    // console.log(action);
     switch (action.type) {
         case INVALIDATE_SUBREDDIT:
         case RECEIVE_POSTS:
